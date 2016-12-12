@@ -12,7 +12,6 @@ public class Mensaje {
 	
 	@Id	
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	
 	private long id;
 	private long IdEmisor;
 	private long IdReceptor;
@@ -38,32 +37,29 @@ public class Mensaje {
 	public void setIdProducto(long IdProducto) {
 		this.IdProducto = IdProducto;
 	}
-	
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
 	}
-	
 	public long getIdEmisor() {
 		return IdEmisor;
 	}
 	public void setIdEmisor(long IdEmisor) {
 		this.IdEmisor = IdEmisor;
 	}
-	
 	public long getIdReceptor() {
 		return IdReceptor;
 	}
 	public void setIdReceptor(long IdReceptor) {
 		this.IdReceptor = IdReceptor;
 	}
-	
 	public String getMensaje() {
 		return mensaje;
 	}
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
 	}
+	
 }
