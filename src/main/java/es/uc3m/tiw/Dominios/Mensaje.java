@@ -1,5 +1,6 @@
 package es.uc3m.tiw.Dominios;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,9 +14,13 @@ public class Mensaje {
 	@Id	
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+	@Column
 	private long IdEmisor;
+	@Column
 	private long IdReceptor;
+	@Column
 	private long IdProducto;
+	@Column(nullable = false, length = 300)
 	private String mensaje;
 	
 
