@@ -1,11 +1,16 @@
 package es.uc3m.tiw.Daos;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import es.uc3m.tiw.Dominios.Mensaje;
+
 
 public interface MensajeRepository extends JpaRepository<MensajeRepository, Long>{
-		ArrayList<MensajeRepository> find(long IdEmisor, long IdReceptor, long IdProducto);
+
+		void save(Mensaje mensaje);
+		
+		List<Mensaje> findByIdReceptor(String idReceptor);
 		
 	}
