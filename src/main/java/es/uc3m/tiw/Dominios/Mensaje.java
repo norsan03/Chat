@@ -15,9 +15,9 @@ public class Mensaje {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	@Column
-	private long IdEmisor;
+	private String IdEmisor;
 	@Column
-	private long IdReceptor;
+	private String IdReceptor;
 	@Column
 	private long IdProducto;
 	@Column(nullable = false, length = 300)
@@ -27,7 +27,7 @@ public class Mensaje {
 	public Mensaje() {
 	}
 	
-	public Mensaje(long id, long origenId, long destinoId, String mensaje, long producto, long IdProducto, long IdEmisor, long IdReceptor) {
+	public Mensaje(long id, long origenId, long destinoId, String mensaje, long producto, long IdProducto, String IdEmisor, String IdReceptor) {
 		super();
 		this.id = id;
 		this.IdEmisor = IdEmisor;
@@ -48,16 +48,16 @@ public class Mensaje {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public long getIdEmisor() {
+	public String getIdEmisor() {
 		return IdEmisor;
 	}
-	public void setIdEmisor(long IdEmisor) {
+	public void setIdEmisor(String IdEmisor) {
 		this.IdEmisor = IdEmisor;
 	}
-	public long getIdReceptor() {
+	public String getIdReceptor() {
 		return IdReceptor;
 	}
-	public void setIdReceptor(long IdReceptor) {
+	public void setIdReceptor(String IdReceptor) {
 		this.IdReceptor = IdReceptor;
 	}
 	public String getMensaje() {
