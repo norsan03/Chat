@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import es.uc3m.tiw.Dominios.Mensaje;
 
 
-public interface MensajeRepository extends JpaRepository<Mensaje, Long>{
+public interface MensajeRepository extends JpaRepository<Mensaje, String>{
 
 		
 		List<Mensaje> findByIdReceptor(String IdReceptor);

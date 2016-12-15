@@ -27,7 +27,7 @@ public class Mensaje {
 	public Mensaje() {
 	}
 	
-	public Mensaje(long id, long origenId, long destinoId, String mensaje, long producto, long IdProducto, String IdEmisor, String IdReceptor) {
+	public Mensaje(long id, String mensaje, long producto, long IdProducto, String IdEmisor, String IdReceptor) {
 		super();
 		this.id = id;
 		this.IdEmisor = IdEmisor;
