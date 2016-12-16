@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.uc3m.tiw.Daos.MensajeRepository;
@@ -27,7 +28,7 @@ public class Controlador {
 	}
 	
     @RequestMapping(value="/listarMensajes/{idReceptor}", method=RequestMethod.GET)
-    public List<Mensaje> listarMensajes(@PathVariable String IdReceptor){
+    public @ResponseBody List<Mensaje> listarMensajes(@PathVariable String IdReceptor){
     		List<Mensaje> listaMensajes = mensajeDao.findByIdReceptor(IdReceptor);
     		if (listaMensajes.isEmpty()){
     			return null;
