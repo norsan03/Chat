@@ -1,5 +1,7 @@
 package es.uc3m.tiw.Dominios;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,16 +11,18 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="MENSAJES")
-public class Mensaje {
+public class Mensaje implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id	
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
-	@Column
-	private long IdEmisor;
-	@Column
-	private long IdReceptor;
-	@Column
+	@Column(length = 25)
+	private String IdEmisor;
+	@Column(length = 25)
+	private String IdReceptor;
+	@Column(length = 25)
 	private long IdProducto;
 	@Column(nullable = false, length = 300)
 	private String mensaje;
@@ -27,7 +31,7 @@ public class Mensaje {
 	public Mensaje() {
 	}
 	
-	public Mensaje(long id, long origenId, long destinoId, String mensaje, long producto, long IdProducto, long IdEmisor, long IdReceptor) {
+	public Mensaje(long id, String mensaje, long producto, long IdProducto, String IdEmisor, String IdReceptor) {
 		super();
 		this.id = id;
 		this.IdEmisor = IdEmisor;
@@ -48,16 +52,16 @@ public class Mensaje {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public long getIdEmisor() {
+	public String getIdEmisor() {
 		return IdEmisor;
 	}
-	public void setIdEmisor(long IdEmisor) {
+	public void setIdEmisor(String IdEmisor) {
 		this.IdEmisor = IdEmisor;
 	}
-	public long getIdReceptor() {
+	public String getIdReceptor() {
 		return IdReceptor;
 	}
-	public void setIdReceptor(long IdReceptor) {
+	public void setIdReceptor(String IdReceptor) {
 		this.IdReceptor = IdReceptor;
 	}
 	public String getMensaje() {
