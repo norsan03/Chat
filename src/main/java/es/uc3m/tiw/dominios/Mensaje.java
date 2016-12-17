@@ -1,4 +1,4 @@
-package es.uc3m.tiw.Dominios;
+package es.uc3m.tiw.dominios;
 
 import java.io.Serializable;
 
