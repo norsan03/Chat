@@ -23,16 +23,15 @@ public class Controlador {
 	@RequestMapping(value = "/guardarMensaje", method = RequestMethod.POST)
 	public Mensaje guardarMensaje(@RequestParam Mensaje mensaje){
 		mensajeDao.save(mensaje);
+		if (mensajeDao.findAll() == null) return null;
 		return mensaje;
 	}
 	
-  /*  @RequestMapping(value="/listarMensajes/{idReceptor}", method=RequestMethod.GET)
-    public List<Mensaje> listarMensajes(@PathVariable String IdReceptor){
-    		List<Mensaje> listaMensajes = mensajeDao.findByIdReceptor(IdReceptor);
-    		if (listaMensajes.isEmpty()){
-    			return null;
-    		}
-    		return listaMensajes;
+   @RequestMapping(value="/bandejaEntrada/{idReceptor}", method=RequestMethod.GET)
+    public List<Mensaje> MensajesRecibidos(@PathVariable String emailReceptor){
+    		List<Mensaje> MensajesRecibidos = mensajeDao.findByIdReceptor(emailReceptor);
+    		if (MensajesRecibidos.isEmpty()) return null;
+    		return MensajesRecibidos;
     }
-    */
+    
 }
