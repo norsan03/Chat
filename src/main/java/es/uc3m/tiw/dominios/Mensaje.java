@@ -17,15 +17,15 @@ public class Mensaje implements Serializable{
 	
 	@Id	
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	public long id;
 	@Column(length = 25)
-	private String IdEmisor;
+	public String IdEmisor;
 	@Column(length = 25)
-	private String IdReceptor;
+	public String IdReceptor;
 	@Column(length = 25)
-	private long IdProducto;
+	public long IdProducto;
 	@Column(nullable = false, length = 300)
-	private String mensaje;
+	public String mensaje;
 	
 
 	public Mensaje() {
