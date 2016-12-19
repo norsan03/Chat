@@ -43,8 +43,6 @@ public class Controlador {
 		List<Mensaje> BandejaEntrada = mensajeDao.findAll();
 		
 		
-		if (BandejaEntrada.isEmpty()) return null;
-		
 		return BandejaEntrada;
     }
     
